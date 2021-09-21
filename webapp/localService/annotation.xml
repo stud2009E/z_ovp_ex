@@ -62,6 +62,10 @@
 						<Record Type="UI.DataField">
 							<PropertyValue Property="Value" Path="Decimal"/>
 						</Record>
+						<Record Type="UI.DataFieldWithUrl">
+							<PropertyValue Property="Url" String="https://sap.com"/>
+							<PropertyValue Property="Value" Path="Date"/>
+						</Record>
 						<Record Type="UI.DataField">
 							<PropertyValue Property="Value" Path="Int32"/>
 						</Record>

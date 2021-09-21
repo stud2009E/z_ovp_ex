@@ -155,12 +155,42 @@
 					"sortBy": "Decimal",
 					"sortOrder": "descending",
 					"listFlavor": "bar",
-					"listType": "expanded",
+					"listType": "condensed",
 					"annotationPath": "com.sap.vocabularies.UI.v1.LineItem#list",
 					"entitySet": "TestDataSet"
 				}
 			},
-			"card02": {
+			"card02":{
+				"model": "main",
+				"template": "sap.ovp.cards.linklist",
+				"settings": {
+					"title": "{{card02_title}}",
+					"subTitle": "{{card02_subtitle}}",
+					"listFlavor": "standard",
+					"staticContent": [
+						{
+							"title": "Company",
+							"subTitle": "Official site",
+							"imageUri": "sap-icon://crm-sales",
+							"imageAltText": "Johnny Johnson",
+							"targetUri": "https://sap.com/cis",
+							"openInNewWindow": true
+						},
+						{
+							"title": "Developers",
+							"subTitle": "Programming courses",
+							"imageUri": "sap-icon://study-leave",
+							"imageAltText": "Ivan Ivanov",
+							"targetUri": "https://developers.sap.com",
+							"openInNewWindow": true
+						}
+					]
+				}
+			},
+			"card03":{
+				
+			},
+			"card04": {
 				"model": "main",
 				"template": "sap.ovp.cards.charts.analytical",
 				"settings": {
