@@ -24,6 +24,7 @@
 					</Collection>
 				</Annotation>
 				<Annotation Term="UI.LineItem" Qualifier="tab1">
+					<Annotation Term="UI.Criticality" Path="Byte"/>
 					<Collection>
 						<Record Type="UI.DataField">
 							<PropertyValue Property="Value" Path="Guid"/>
@@ -42,6 +43,7 @@
 					</Collection>
 				</Annotation>
 				<Annotation Term="UI.LineItem" Qualifier="tab2">
+					<Annotation Term="UI.Criticality" Path="Byte"/>
 					<Collection>
 						<Record Type="UI.DataField">
 							<PropertyValue Property="Value" Path="Guid"/>
@@ -51,6 +53,20 @@
 						</Record>
 						<Record Type="UI.DataField">
 							<PropertyValue Property="Value" Path="Boolean"/>
+						</Record>
+					</Collection>
+				</Annotation>
+
+				<Annotation Term="UI.LineItem" Qualifier="list">
+					<Collection>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Decimal"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Int32"/>
+						</Record>
+						<Record Type="UI.DataFieldForAnnotation">
+							<PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#progressInt16"/>
 						</Record>
 					</Collection>
 				</Annotation>
@@ -162,6 +178,7 @@
 					<Record Type="UI.DataPointType">
 						<PropertyValue Property="Value" Path="Int16"/>
 						<PropertyValue Property="TargetValue" Int="1000"/>
+						<PropertyValue Property="Criticality" Path="Byte"/>
 						<PropertyValue Property="Visualization" EnumMember="UI.VisualizationType/Progress"/>
 					</Record>
 				</Annotation>

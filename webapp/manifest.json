@@ -145,7 +145,22 @@
 					}
 				}
 			},
-			"card01": {
+			"card01":{
+				"model":"main",
+				"template": "sap.ovp.cards.list",
+				"settings":{
+					"title": "{{card01_title}}",
+					"category": "{{card01_category}}",
+					"subtitle": "{{card01_subtitle}}",
+					"sortBy": "Decimal",
+					"sortOrder": "descending",
+					"listFlavor": "bar",
+					"listType": "expanded",
+					"annotationPath": "com.sap.vocabularies.UI.v1.LineItem#list",
+					"entitySet": "TestDataSet"
+				}
+			},
+			"card02": {
 				"model": "main",
 				"template": "sap.ovp.cards.charts.analytical",
 				"settings": {
