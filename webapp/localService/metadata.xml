@@ -16,8 +16,21 @@
             <Property Name="Time" Type="Edm.Time" MaxLength="10" Nullable="false" sap:label="Time"/>
             <Property Name="Byte" Type="Edm.Byte" MaxLength="10" Nullable="false" sap:label="Byte"/>
          </EntityType>
+
+         <EntityType Name="LinkListType" sap:label="link type" sap:content-version="1">
+            <Key>
+               <PropertyRef Name="ID" />
+            </Key>
+            <Property Name="ID" Type="Edm.String" MaxLength="10" Nullable="false" sap:label="String" />
+            <Property Name="Title" Type="Edm.String" MaxLength="10" Nullable="false" sap:label="String"/>
+            <Property Name="Description" Type="Edm.String" MaxLength="10" Nullable="false" sap:label="String"/>
+            <Property Name="ImgUrl" Type="Edm.String" MaxLength="10" Nullable="false" sap:label="String"/>
+         </EntityType>
+
+
          <EntityContainer Name="CUSTOM_DATA_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
             <EntitySet Name="TestDataSet" EntityType="CUSTOM_DATA_SRV.TestDataType" sap:content-version="1" />
+            <EntitySet Name="LinkListSet" EntityType="CUSTOM_DATA_SRV.LinkListType" sap:content-version="1" />
          </EntityContainer>
       </Schema>
    </edmx:DataServices>
