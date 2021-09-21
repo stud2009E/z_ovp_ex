@@ -238,7 +238,21 @@
 					  }
 				}
 			},
-			"card05": {
+			"card05":{
+				"model":"main",
+				"template": "sap.ovp.cards.stack",
+				"settings": {
+					"title": "Stack Card Title",
+					"subTitle": "Stack Card",
+					"itemText": "childs of parent",
+					"entitySet": "TestDataSet",
+					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#stack",
+					"objectStreamCardsSettings": {
+						"annotationPath": "com.sap.vocabularies.UI.v1.Facets#stack"
+					}
+				}
+			},
+			"card06": {
 				"model": "main",
 				"template": "sap.ovp.cards.charts.analytical",
 				"settings": {

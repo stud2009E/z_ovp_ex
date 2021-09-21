@@ -175,6 +175,10 @@
 							<PropertyValue Property="SemanticObject" String="Z_LROP_EX"/>
 							<PropertyValue Property="Action" String="display"/>
 						</Record>
+						<Record Type="UI.DataFieldForAction">
+							<PropertyValue Property="Label" String="CustomAction"/>
+							<PropertyValue Property="Action" String="CUSTOM_DATA_SRV.CUSTOM_DATA_SRV_Entities/CustomAction"/>
+						</Record>
 					</Collection>
 				</Annotation>
 
@@ -315,6 +319,25 @@
 						</PropertyValue>
 					</Record>
 				</Annotation>
+
+				<Annotation Term="UI.HeaderInfo">
+					<Record Type="UI.HeaderInfoType">
+						<PropertyValue Property="TypeName" String="Item"/>
+						<PropertyValue Property="TypeNamePlural" String="Stack Items"/>
+						<PropertyValue Property="Title">
+							<Record Type="UI.DataField">
+								<PropertyValue Property="Value" Path="Int32"/>
+							</Record>
+						</PropertyValue>
+						<PropertyValue Property="Description">
+							<Record Type="UI.DataField">
+								<PropertyValue Property="Value" Path="Date"/>
+							</Record>
+						</PropertyValue>
+						<PropertyValue Property="ImageUrl" String="sap-icon://customer"/>
+					</Record>
+				</Annotation>
+
 				<Annotation Term="UI.Chart" Qualifier="column">
 					<Record Type="UI.ChartDefinitionType">
 						<PropertyValue Property="ChartType" EnumMember="UI.ChartType/Column"/>
@@ -337,6 +360,55 @@
 						</PropertyValue>
 					</Record>
 				</Annotation>
+
+				<Annotation Term="UI.Facets" Qualifier="stack">
+					<Collection>
+						<Record Type="UI.ReferenceFacet">
+							<Annotation Term="UI.IsSummary"/>
+							<PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#stackFG1"/>
+						</Record>
+						<Record Type="UI.ReferenceFacet">
+							<Annotation Term="UI.IsSummary"/>
+							<PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#stackFG2"/>
+						</Record>
+					</Collection>
+				</Annotation>
+
+				<Annotation Term="UI.FieldGroup" Qualifier="stackFG1">
+					<Record Type="UI.FieldGroupType">
+						<PropertyValue Property="Label" String="group 1 label"/>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField">
+									<PropertyValue Property="Label" String="Guid"/>
+									<PropertyValue Property="Value" Path="Guid"/>
+								</Record>
+								<Record Type="UI.DataField">
+									<PropertyValue Property="Label" String="String"/>
+									<PropertyValue Property="Value" Path="String"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="stackFG2">
+					<Record Type="UI.FieldGroupType">
+						<PropertyValue Property="Label" String="group 2 label"/>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField">
+									<PropertyValue Property="Label" String="Byte"/>
+									<PropertyValue Property="Value" Path="Byte"/>
+								</Record>
+								<Record Type="UI.DataField">
+									<PropertyValue Property="Label" String="Date"/>
+									<PropertyValue Property="Value" Path="Date"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				
 			</Annotations>
 
 			<Annotations Target="Metadata.LinkListType">
