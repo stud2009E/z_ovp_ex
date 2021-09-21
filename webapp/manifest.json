@@ -187,9 +187,40 @@
 					]
 				}
 			},
-			"card03":{
-				
-			},
+			"card03": {
+				"model": "main",
+				"template": "sap.ovp.cards.linklist",
+				"settings": {
+				  "title": "Quick Links",
+				  "subTitle": "Standard Link List With Static Data",
+				  "listFlavor": "standard",
+				  "defaultSpan": {
+					"rows": 20,
+					"cols": 1
+				  },
+				  "staticContent": [
+					{
+					  "title": "Create Purchase Order",
+					  "imageUri": "/assets/js.png",
+					  "semanticObject": "Z_ANALYT_APP",
+					  "action": "display",
+					  "disableInCard": true
+					},
+					{
+					  "title": "Create Supplier",
+					  "imageUri": "/assets/python.png",
+					  "semanticObject": "Z_OVP_EX",
+					  "action": "display"
+					},
+					{
+					  "title": "Create Contact",
+					  "imageUri": "/assets/java.png",
+					  "semanticObject": "Z_LROP_EX",
+					  "action": "display"
+					}
+				  ]
+				}
+			  },
 			"card04": {
 				"model": "main",
 				"template": "sap.ovp.cards.charts.analytical",
