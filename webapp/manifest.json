@@ -107,12 +107,34 @@
 					"category": "{{card00_category}}",
 					
 					"listFlavor": "bar",
+					"listType": "condensed",
 					
 					"entitySet": "TestDataSet",
-					"annotationPath": "com.sap.vocabularies.UI.v1.LineItem#card00",
 
 					"requireAppAuthorization": "",
 					"valueSelectionInfo": "Value Selection Info",
+					"kpiAnnotationPath":"com.sap.vocabularies.UI.v1.KPI#KPI",
+
+					"tabs":[
+						{
+							"dynamicSubtitleAnnotationPath": "com.sap.vocabularies.UI.v1.HeaderInfo#tab1",
+							"annotationPath": "com.sap.vocabularies.UI.v1.LineItem#tab1",
+							"selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#tab1",
+							"presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#tab1",
+							"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
+							"dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#KPI",
+							"value": "{{tab1}}"
+						},
+						{
+							"dynamicSubtitleAnnotationPath": "com.sap.vocabularies.UI.v1.HeaderInfo#tab2",
+							"annotationPath": "com.sap.vocabularies.UI.v1.LineItem#tab2",
+							"selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#tab2",
+							"presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#tab2",
+							"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
+							"dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#KPI",
+							"value": "{{tab2}}"
+						}
+					],
 
 					"defaultSpan": {
 						"rows": 5, 
