@@ -78,10 +78,7 @@
 			"main": {
 				"dataSource": "main",
 				"settings": {
-					"defaultCountMode": "Inline",
-					"metadataUrlParams": {
-						"sap-value-list": "none"
-					}
+					"defaultCountMode": "Inline"
 				}
 			}
 		},
@@ -96,18 +93,34 @@
 	"sap.ovp": {
 		"globalFilterModel": "main",
 		"globalFilterEntitySet": "TestDataSet",
-		"containerLayout": "fixed",
+		"containerLayout": "resizable",
 		"enableLiveFilter": false,
 		"considerAnalyticalParameters": true,
+		"refreshIntervalInMinutes": 1,
 		"cards": {
 			"card00": {
 				"model": "main",
 				"template": "sap.ovp.cards.table",
 				"settings": {
 					"title": "{{card00_title}}",
+					"subTitle":"{{card00_subtitle}}",
+					"category": "{{card00_category}}",
+					
+					"listFlavor": "bar",
+					
 					"entitySet": "TestDataSet",
-					"addODataSelect": false,
-					"annotationPath": "com.sap.vocabularies.UI.v1.LineItem"
+					"annotationPath": "com.sap.vocabularies.UI.v1.LineItem#card00",
+
+					"requireAppAuthorization": "",
+					"valueSelectionInfo": "Value Selection Info",
+
+					"defaultSpan": {
+						"rows": 5, 
+						"cols": 2,
+						"showOnlyHeader": false,
+						"minimumTitleRow": 1,
+						"minimumSubTitleRow": 1
+					}
 				}
 			},
 			"card01": {

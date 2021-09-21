@@ -23,19 +23,122 @@
 						<PropertyPath>Date</PropertyPath>
 					</Collection>
 				</Annotation>
-				<Annotation Term="UI.LineItem">
+				<Annotation Term="UI.LineItem" Qualifier="card00">
 					<Collection>
 						<Record Type="UI.DataField">
 							<PropertyValue Property="Value" Path="Guid"/>
 						</Record>
 						<Record Type="UI.DataField">
-							<PropertyValue Property="Value" Path="String"/>
+							<PropertyValue Property="Label" String="Numeric int 16"/>
+							<PropertyValue Property="Value" Path="Int16"/>
+						</Record>
+						<Record Type="UI.DataFieldForAnnotation">
+							<PropertyValue Property="Label" String="{@i18n>contact}"/>
+							<PropertyValue Property="Target" AnnotationPath="@Communication.Contact#contact"/>
 						</Record>
 						<Record Type="UI.DataField">
 							<PropertyValue Property="Value" Path="Date"/>
 						</Record>
 					</Collection>
 				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="progressInt16">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="Int16"/>
+						<PropertyValue Property="TargetValue" Int="1000"/>
+						<PropertyValue Property="Visualization" EnumMember="UI.VisualizationType/Progress"/>
+					</Record>
+				</Annotation>
+
+
+				<Annotation Term="UI.KPI" Qualifier="KPI">
+					<Record Type="UI.KPIType">
+						<PropertyValue Property="SelectionVariant">
+							<Record Type="UI.SelectionVariantType">
+								<PropertyValue Property="Text" String="{@i18n>kpiTitle}"/>
+								<PropertyValue Property="SelectOptions">
+									<Collection>
+										<Record Type="UI.SelectOptionType">
+											<PropertyValue Property="PropertyName" PropertyPath="Decimal"/>
+											<PropertyValue Property="Ranges">
+												<Collection>
+													<Record Type="UI.SelectionRangeType">
+														<PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I"/>
+														<PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/GT"/>
+														<PropertyValue Property="Low" Decimal="100"/>
+													</Record>
+												</Collection>
+											</PropertyValue>
+										</Record>
+									</Collection>
+								</PropertyValue>
+							</Record>
+						</PropertyValue>
+						<PropertyValue Property="DataPoint">
+							<Record Type="UI.DataPointType">
+								<PropertyValue Property="Title" String="{@i18n>kpiTitle}" />
+								<PropertyValue Property="Value" Path="Decimal" />
+								<PropertyValue Property="ValueFormat">
+									<Record>
+										<PropertyValue Property="ScaleFactor" Decimal="2" />
+										<PropertyValue Property="NumberOfFractionalDigits" Int="1" />
+									</Record>
+								</PropertyValue>
+								<PropertyValue Property="CriticalityCalculation">
+									<Record>
+										<PropertyValue Property="ImprovementDirection" EnumMember="UI.ImprovementDirectionType/Minimize" />
+										<PropertyValue Property="DeviationRangeHighValue" String="7300" />
+										<PropertyValue Property="ToleranceRangeHighValue" String="7200" />
+									</Record>
+								</PropertyValue>
+								<PropertyValue Property="TargetValue" String="2.000 " />
+								<PropertyValue Property="TrendCalculation">
+									<Record>
+										<PropertyValue Property="ReferenceValue" String="3450" />
+										<PropertyValue Property="DownDifference" Decimal="500" />
+										<PropertyValue Property="UpDifference" Decimal="500"/>
+										<PropertyValue Property="StrongDownDifference" Decimal="1000"/>
+										<PropertyValue Property="StrongUpDifference" Decimal="1000"/>
+									</Record>
+								</PropertyValue>
+							</Record>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+
+				<Annotation Term="Communication.Contact" Qualifier="contact">
+					<Record Type="Communication.ContactType">
+						<PropertyValue Property="fn" Path="String"/>
+						<PropertyValue Property="tel">
+							<Collection>
+								<Record Type="Communication.PhoneNumberType">
+									<PropertyValue Property="type" EnumMember="Communication.PhoneType/cell"/>
+									<PropertyValue Property="uri" Path="String"/>
+								</Record>
+								<Record Type="Communication.PhoneNumberType">
+									<PropertyValue Property="type" EnumMember="Communication.PhoneType/work"/>
+									<PropertyValue Property="uri" Path="String"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="email">
+							<Collection>
+								<Record Type="Communication.EmailAddressType">
+									<PropertyValue Property="address" Path="String"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="role" Path="String"/>
+						<PropertyValue Property="url">
+							<Collection>
+								<Record Type="Communication.UrlType">
+									<PropertyValue Property="type" EnumMember="Communication.ContactInformationType/preferred"/>
+									<PropertyValue Property="uri" Path="String"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+
 				<Annotation Term="UI.PresentationVariant">
 					<Record Type="UI.PresentationVariantType">
 						<PropertyValue Property="RequestAtLeast">
