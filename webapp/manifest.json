@@ -256,10 +256,20 @@
 				"model": "main",
 				"template": "sap.ovp.cards.charts.analytical",
 				"settings": {
-					"title": "{{card01_title}}",
+					"title": "Column",
 					"entitySet": "TestDataSet",
-					"presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant",
+					"presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#column",
+					"selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#column",
 					"chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#column"
+				}
+			},
+			"card07": {
+				"model": "main",
+				"template": "sap.ovp.cards.charts.analytical",
+				"settings": {
+					"title": "Lines",
+					"entitySet": "TestDataSet",
+					"chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#line"
 				}
 			}
 		}

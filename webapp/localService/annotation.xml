@@ -338,29 +338,6 @@
 					</Record>
 				</Annotation>
 
-				<Annotation Term="UI.Chart" Qualifier="column">
-					<Record Type="UI.ChartDefinitionType">
-						<PropertyValue Property="ChartType" EnumMember="UI.ChartType/Column"/>
-						<PropertyValue Property="MeasureAttributes">
-							<Collection>
-								<Record Type="UI.ChartMeasureAttributeType">
-									<PropertyValue Property="Measure" PropertyPath="Decimal"/>
-								</Record>
-								<Record Type="UI.ChartMeasureAttributeType">
-									<PropertyValue Property="Measure" PropertyPath="Int16"/>
-								</Record>
-							</Collection>
-						</PropertyValue>
-						<PropertyValue Property="DimensionAttributes">
-							<Collection>
-								<Record Type="UI.ChartDimensionAttributeType">
-									<PropertyValue Property="Dimension" PropertyPath="String"/>
-								</Record>
-							</Collection>
-						</PropertyValue>
-					</Record>
-				</Annotation>
-
 				<Annotation Term="UI.Facets" Qualifier="stack">
 					<Collection>
 						<Record Type="UI.ReferenceFacet">
@@ -408,7 +385,101 @@
 						</PropertyValue>
 					</Record>
 				</Annotation>
+
+				<Annotation Term="UI.Chart" Qualifier="column">
+					<Record Type="UI.ChartDefinitionType">
+						<PropertyValue Property="ChartType" EnumMember="UI.ChartType/Column"/>
+						<PropertyValue Property="MeasureAttributes">
+							<Collection>
+								<Record Type="UI.ChartMeasureAttributeType">
+									<PropertyValue Property="Measure" PropertyPath="Decimal"/>
+								</Record>
+								<Record Type="UI.ChartMeasureAttributeType">
+									<PropertyValue Property="Measure" PropertyPath="Int16"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="DimensionAttributes">
+							<Collection>
+								<Record Type="UI.ChartDimensionAttributeType">
+									<PropertyValue Property="Dimension" PropertyPath="Byte"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+
+				<Annotation Term="UI.PresentationVariant" Qualifier="column">
+					<Record Type="UI.PresentationVariantType">
+						<PropertyValue Property="SortOrder">
+							<Collection>
+								<Record Type="Common.SortOrderType">
+									<PropertyValue Property="Descending" Bool="true"/>
+									<PropertyValue Property="Property" PropertyPath="Byte"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+
+				<Annotation Term="UI.SelectionVariant" Qualifier="column">
+					<Record Type="UI.SelectionVariantType">
+						<PropertyValue Property="SelectOptions">
+							<Collection>
+								<Record Type="UI.SelectOptionType">
+									<PropertyValue Property="PropertyName" PropertyPath="Int16"/>
+									<PropertyValue Property="Ranges">
+										<Collection>
+											<Record Type="UI.SelectionRangeType">
+												<PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I"/>
+												<PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/GT"/>
+												<PropertyValue Property="Low" String="500"/>
+											</Record>
+										</Collection>
+									</PropertyValue>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
 				
+				<Annotation Term="UI.Chart" Qualifier="line">
+					<Record Type="UI.ChartDefinitionType">
+						<PropertyValue Property="ChartType" EnumMember="UI.ChartType/Line"/>
+						<PropertyValue Property="Dimensions">
+							<Collection>
+								<PropertyPath>String</PropertyPath>
+								<PropertyPath>Byte</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Measures">
+							<Collection>
+								<PropertyPath>Int16</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="DimensionAttributes">
+							<Collection>
+								<Record Type="UI.ChartDimensionAttributeType">
+									<PropertyValue Property="Dimension" PropertyPath="String"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="MeasureAttributes">
+							<Collection>
+								<Record Type="UI.ChartMeasureAttributeType">
+									<PropertyValue Property="Measure" PropertyPath="Int16"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>
+								</Record>
+								<Record Type="UI.ChartMeasureAttributeType">
+									<PropertyValue Property="Measure" PropertyPath="Int32"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+
 			</Annotations>
 
 			<Annotations Target="Metadata.LinkListType">
