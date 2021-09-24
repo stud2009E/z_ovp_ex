@@ -271,6 +271,20 @@
 					"entitySet": "TestDataSet",
 					"chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#line"
 				}
+			},
+			"card08":{
+				"model": "main",
+				"template": "z.ovp.ex.ext.card",
+				"settings": {
+					"title": "Custom Card Title",
+					"subTitle": "Custom card subtitle",
+					"entitySet": "TestDataSet",
+					"layoutDetail": "fixed",
+					"cardLayout":{
+						"rowSpan": 20,
+						"height": "320px"
+					}
+				}
 			}
 		}
 	}
