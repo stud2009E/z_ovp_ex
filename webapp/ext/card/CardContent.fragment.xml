@@ -4,8 +4,28 @@
 	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1">
 
 
-	<Text text="Custom card"
-		class="sapUiSmallMargin"/>
+	<List id="cardData"
+		items="{
+			path:'entitySet>',
+			formatter: 'sap.ovp.cards.AnnotationHelper.formatItems'
+		}">
+		<CustomListItem>
+			<HBox height="5rem"
+				class="sapUiSmallMarginBeginEnd sapUiSmallMarginTop"
+				justifyContent="SpaceBetween">
+				<FormattedText
+					class="sapOvpCardTitle"
+					htmlText="&lt;span style='white-space:pre-line;font-size:1.125rem;word-wrap:break-word;text-overflow:ellipsis'&gt;
+							\{{= ${ovpCardProperties>/titleField}}\}
+						&lt;/span&gt;"/>
+				<FormattedText
+					class="sapUiSmallMarginBegin" 
+					htmlText="&lt;h1 style='font-size:3rem;color:#ababab'&gt;
+							\{{= ${ovpCardProperties>/countDisplayField}}\}
+						&lt;/h1&gt;"/>
+			</HBox>
+		</CustomListItem>
+	</List>
 
 
 </core:FragmentDefinition>

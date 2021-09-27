@@ -279,9 +279,13 @@
 					"title": "Custom Card Title",
 					"subTitle": "Custom card subtitle",
 					"entitySet": "TestDataSet",
+					"titleField": "String",
+					"countDisplayField": "Int16",
 					"cardLayout":{
-						"rowSpan": 10
-					}
+						"rowSpan": 10,
+						"noOfItems": 2
+					},
+					"addODataSelect": true
 				}
 			}
 		}
