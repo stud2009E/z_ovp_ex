@@ -279,10 +279,8 @@
 					"title": "Custom Card Title",
 					"subTitle": "Custom card subtitle",
 					"entitySet": "TestDataSet",
-					"layoutDetail": "fixed",
 					"cardLayout":{
-						"rowSpan": 20,
-						"height": "320px"
+						"rowSpan": 10
 					}
 				}
 			}

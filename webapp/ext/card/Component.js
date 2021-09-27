@@ -28,10 +28,6 @@ sap.ui.define([
 				"headerExtensionFragment": {
 					"type": "string",
 					"defaultValue": "sap.ovp.cards.generic.KPIHeader"
-				},
-				"footerFragment": {
-					type: "string",
-					defaultValue: "z.ovp.ex.ext.card.Footer"
 				}
 			},
 

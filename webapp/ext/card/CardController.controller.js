@@ -10,45 +10,39 @@ sap.ui.define([
 		},
 
 		onBeforeRendering: function(){
-			var oCardPropertiesModel = this.getCardPropertiesModel();
-			oCardPropertiesModel.setProperty("/cardLayout/rowSpan", 30);
+			
 		},
 
 		onAfterRendering: function(){
 			Controller.prototype.onAfterRendering.apply(this, arguments);
+			var oCardPropertiesModel = this.getCardPropertiesModel();
+			var oCard = this.oDashboardLayoutUtil.dashboardLayoutModel.getCardById(this.cardId);
+			
+			if(isNaN(oCardPropertiesModel.getProperty("/cardLayout/rowSpan"))){
+				oCardPropertiesModel.setProperty("/cardLayout/rowSpan", 20);
+			}
 
+			var iRowSpan = Math.max(oCardPropertiesModel.getProperty("/cardLayout/rowSpan"), oCard.dashboardLayout.rowSpan) || 20;
+
+			this._setWraperHeight(iRowSpan);
+		},
+
+
+		_setWraperHeight: function(iRowSpan){
 			var oCard = this.oDashboardLayoutUtil.dashboardLayoutModel.getCardById(this.cardId);
 			var iHeaderHeight = Math.max(oCard.dashboardLayout.headerHeight, this.getHeaderHeight());
 			var sCardId = this.oDashboardLayoutUtil.getCardDomId(this.cardId);
 			var element = document.getElementById(sCardId);
-
 			element.getElementsByClassName('sapOvpWrapper')[0].style.height =
-                            (oCard.dashboardLayout.rowSpan * this.oDashboardLayoutUtil.ROW_HEIGHT_PX) - (iHeaderHeight + 2 * this.oDashboardLayoutUtil.CARD_BORDER_PX) + "px";
+                            (iRowSpan * this.oDashboardLayoutUtil.ROW_HEIGHT_PX) - (iHeaderHeight + 2 * this.oDashboardLayoutUtil.CARD_BORDER_PX) + "px";
 		},
-
 
 		resizeCard: function(newCardLayout){
 			var oCardPropertiesModel = this.getCardPropertiesModel();
 			oCardPropertiesModel.setProperty("/cardLayout/rowSpan", newCardLayout.rowSpan);
 			oCardPropertiesModel.setProperty("/cardLayout/colSpan", newCardLayout.colSpan);
 
-			var oContainer = this.getOwnerComponent().oContainer;
-			var oHeader = this.byId("ovpCardHeader");
-			var oContent = this.byId("ovpCardContentContainer");
-			var oFooter = this.byId("ovpCardFooterContent");
-
-			var iHeader = $(oHeader.$()).outerHeight();
-			var iContent = $(oContent.$()).outerHeight();
-			var iFooter = $(oFooter.$()).outerHeight();
-			var iContainer = $(oContainer.$()).outerHeight();
-
-			var iContent = iContainer - ( iFooter + iHeader );
-
-			if(iContent > 0){
-				iContent = Math.floor( iContent / 16 ) * 16;
-			}
-
-			oContent.$().css({height: iContent + "px"});
+			this._setWraperHeight(newCardLayout.rowSpan);
 		}
 
 
